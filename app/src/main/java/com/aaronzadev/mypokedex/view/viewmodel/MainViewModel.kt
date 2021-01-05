@@ -9,15 +9,17 @@ import kotlinx.coroutines.launch
 
 class MainViewModel(private val repository: PokemonsRepository) : ViewModel() {
 
-    //TODO
-    //val pokemons : Flow<List<Pokemon>> = repository.getPokemons()
+    val pokemons : Flow<List<Pokemon>> = repository.getPokemons()
 
     init {
         viewModelScope.launch {
-            repository.checkRequireNewPage(0)
+            notifyLastVisible(0)
         }
     }
 
-
+    suspend fun notifyLastVisible(lastVisiblePokemon: Int) {
+        repository.checkRequireNewPage(lastVisiblePokemon)
+        //_spinner.value = false
+    }
 
 }
