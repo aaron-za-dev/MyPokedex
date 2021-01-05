@@ -4,7 +4,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface LocalDataSource {
 
-    suspend fun getPokemons(): Flow<List<Pokemon>>
+    fun getPokemons(): Flow<List<Pokemon>>
 
     suspend fun size(): Int
 
