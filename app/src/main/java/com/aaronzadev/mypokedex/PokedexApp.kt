@@ -2,7 +2,6 @@ package com.aaronzadev.mypokedex
 
 import android.app.Application
 import androidx.room.Room
-import androidx.room.RoomDatabase
 import com.aaronzadev.mypokedex.data.local.PokemonDB
 
 class PokedexApp : Application() {
