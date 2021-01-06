@@ -8,6 +8,6 @@ interface LocalDataSource {
 
     suspend fun size(): Int
 
-    suspend fun saveMovies(newMovies: List<Pokemon>)
+    suspend fun savePokemons(newPokemons: List<Pokemon>)
 
 }
