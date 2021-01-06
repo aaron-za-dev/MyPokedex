@@ -13,9 +13,9 @@ interface PokemonDAO {
     fun getAll(): Flow<List<RoomPokemon>>
 
     @Query("SELECT COUNT(id) FROM RoomPokemon")
-    suspend fun movieCount(): Int
+    suspend fun pokemonsCount(): Int
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertMovies(pokemons: List<RoomPokemon>)
+    suspend fun insertPokemons(pokemons: List<RoomPokemon>)
 
 }
