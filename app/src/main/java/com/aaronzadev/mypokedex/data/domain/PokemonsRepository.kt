@@ -15,11 +15,11 @@ class PokemonsRepository(private val localDataSource: LocalDataSource,
     suspend fun checkRequireNewPage(lastVisiblePokemon: Int) {
         val size = localDataSource.size()
         if (lastVisiblePokemon >= size - DEFAULTLIMIT) {
-            val page = size / DEFAULTLIMIT + 1
+            val page = size / DEFAULTLIMIT //+ 1
             val newPokemons = withTimeout(5_000) {
                 remoteDataSource.getPokemons(page, DEFAULTLIMIT)
             }
-            localDataSource.saveMovies(newPokemons)
+            localDataSource.savePokemons(newPokemons)
         }
     }
 
